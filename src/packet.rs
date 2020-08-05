@@ -116,3 +116,6 @@ unsafe extern "C" fn packet_free_callback(packet: *mut ENetPacket) {
         (*packet).userData as usize,
     ));
 }
+
+unsafe impl Send for Packet {}
+unsafe impl Sync for Packet {}
