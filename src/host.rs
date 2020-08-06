@@ -302,3 +302,5 @@ impl<T> Drop for Host<T> {
         }
     }
 }
+
+unsafe impl<T> Send for Host<T> {}
