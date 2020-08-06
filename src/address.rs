@@ -1,4 +1,5 @@
 use std::ffi::CStr;
+use std::fmt;
 use std::net::{Ipv4Addr, SocketAddrV4};
 
 use crate::Error;
@@ -65,6 +66,12 @@ impl Address {
             ),
             addr.port,
         )
+    }
+}
+
+impl fmt::Display for Address {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{}:{}", self.ip(), self.port())
     }
 }
 
