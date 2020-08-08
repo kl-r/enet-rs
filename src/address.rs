@@ -57,7 +57,7 @@ impl Address {
     }
 
     pub(crate) fn from_enet_address(addr: &ENetAddress) -> Address {
-        let bytes = addr.host.to_be_bytes();
+        let bytes = addr.host.to_ne_bytes();
         Address::new(
             Ipv4Addr::new(bytes[0], bytes[1], bytes[2], bytes[3]),
             addr.port,
