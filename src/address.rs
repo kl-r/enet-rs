@@ -7,7 +7,7 @@ use crate::Error;
 use enet_sys::ENetAddress;
 
 /// An IPv4 address that can be used with the ENet API.
-#[derive(Clone, Debug, PartialEq, Eq)]
+#[derive(Clone, Debug, PartialEq, Eq, Hash)]
 pub struct Address {
     addr: SocketAddrV4,
 }
