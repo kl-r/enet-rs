@@ -71,7 +71,7 @@ impl Packet {
                 data.len()
                     .try_into()
                     .expect("packet data too long for ENet (`size_t`)"),
-                mode.to_sys_flags() | _ENetPacketFlag_ENET_PACKET_FLAG_NO_ALLOCATE,
+                mode.to_sys_flags() | _ENetPacketFlag_ENET_PACKET_FLAG_NO_ALLOCATE as u32,
             )
         };
 
